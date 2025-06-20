@@ -46,6 +46,9 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100vw;           
+  left: 0;                
+  box-sizing: border-box; 
 }
 
 .nav-list {
@@ -75,6 +78,10 @@ footer {
   font-size: 0.9rem;
   color: #666;
   border-top: 1px solid #ddd;
+  width: 100vw;
+  left: 0;
+  box-sizing: border-box;
+  position: relative; /* ensure normal flow */
 }
 
 .image-gallery {
