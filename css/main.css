@@ -89,14 +89,16 @@ footer {
 
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
-  justify-items: center; /* center images in their grid cells */
+  justify-items: center;
   margin: 2rem 0;
+  padding: 0 1rem; /* add horizontal padding to prevent overflow */
 }
 
 .image-gallery img {
-  width: 300px;
+  width: 100%;              /* image fills the grid column */
+  max-width: 300px;         /* don't get too large */
   height: 200px;
   object-fit: cover;
   border: 2px solid #007bff;
