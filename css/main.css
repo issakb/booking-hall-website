@@ -7,7 +7,7 @@ body {
 }
 
 main {
-  max-width: 600px;
+  max-width: 1200px;
   margin: auto;
   padding: 1.5rem;        /* add padding around all content */
   background: white;      /* optional: white bg for better contrast */
