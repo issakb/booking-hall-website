@@ -4,22 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
   <main>
     <h1>Contact Us</h1>
     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <label for="name">Name</label>
+      <label for="name">Full Name</label>
       <input type="text" name="name" id="name" required />
 
       <label for="email">Email</label>
       <input type="email" name="email" id="email" required />
 
-      <label for="message">Message</label>
-      <textarea name="message" id="message" required></textarea>
+      <label for="date">Date of Event</label>
+      <input type="date" name="date" id="date" required />
 
-      <button type="submit">Send</button>
+      <label for="start_time">Start Time</label>
+      <input type="time" name="start_time" id="start_time" required />
+
+      <label for="end_time">End Time</label>
+      <input type="time" name="end_time" id="end_time" required />
+
+      <label for="guests">Number of Guests</label>
+      <input type="number" name="guests" id="guests" required min="1" />
+
+      <label for="message">Additional Message</label>
+      <textarea name="message" id="message"></textarea>
+
+      <button type="submit">Request a Quote</button>
     </form>
   </main>
 </body>
