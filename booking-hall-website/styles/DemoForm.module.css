@@ -1,0 +1,31 @@
+.container {
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+  }
+  
+  .title {
+    color: #8B5E3C; /* Warm rich brown, like wood or vintage leather */
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    border-bottom: 2px solid #D9B99B; /* subtle champagne/gold underline */
+    padding-bottom: 0.5rem;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .form {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .submitButton {
+    margin-top: 1rem;
+    width: 100%;
+  } 

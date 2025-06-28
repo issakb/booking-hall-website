@@ -1,0 +1,17 @@
+.container {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    max-width: 1200px;
+    padding: 0 1rem;
+    line-height: 1.6;
+  }
+  
+  .ul {
+    margin-top: 0.5rem;
+    padding-left: 1.5rem;
+  }
+  
+  .li {
+    margin-bottom: 0.4rem;
+    font-size: 1.05rem;
+  }  

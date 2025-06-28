@@ -1,0 +1,26 @@
+{
+    "name": "booking-hall-website",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "antd": "^5.26.2",
+        "dayjs": "^1.11.13",
+        "moment": "^2.29.4",
+        "next": "13.5.2",
+        "react": "18.2.0",
+        "react-dom": "18.2.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^30.0.0",
+        "@types/moment": "^2.13.0",
+        "@types/node": "20.4.2",
+        "@types/react": "18.2.14",
+        "typescript": "5.1.6"
+    }
+}
