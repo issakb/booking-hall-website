@@ -35,6 +35,7 @@
   .ctaButton {
     margin-top: 16px;
   }
+  
   .demoContainer {
     background: #fef6f6; /* soft cream */
     padding: 3rem 2rem;
@@ -44,6 +45,37 @@
     box-shadow: 0 6px 15px rgba(224, 192, 171, 0.4); /* soft warm shadow */
     color: #5a3e36; /* warm brown text */
     font-family: 'Playfair Display', serif;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .demoContainer {
+      max-width: 90vw; /* 90% of viewport width */
+      padding: 1.5rem 1rem;
+      margin: 1rem auto;
+      border-radius: 8px;
+    }
+  
+    /* Flex container for the two main columns */
+    .demoRow {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    /* Stack columns vertically, make full width */
+    .demoCol {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  
+    /* Reorder columns: show right column first, left column second */
+    .demoCol.rightCol {
+      order: 1;
+    }
+  
+    .demoCol.leftCol {
+      order: 2;
+    }
   }
   
   .demoContainer ul {
