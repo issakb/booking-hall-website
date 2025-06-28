@@ -1,0 +1,93 @@
+.layoutRoot {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f0f2f5;
+  }
+  
+  /* Fixed header */
+  .fixedHeader {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    background: #001529;
+    box-shadow: 0 2px 8px #f0f1f2;
+  }
+  
+  /* Desktop menu */
+  .desktopMenu {
+    flex: 1;
+  }
+  
+  /* Hamburger button hidden by default */
+  .hamburgerButton {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    z-index: 1100;
+  }
+  
+  /* Hamburger icon style */
+  .hamburgerIcon {
+    color: white;
+    font-size: 24px;
+  }
+  
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .desktopMenu {
+      display: none;
+    }
+    .hamburgerButton {
+      display: block;
+    }
+    .mobileMenu {
+      position: fixed;
+      top: 64px; /* just below header */
+      right: 0;
+      width: 100%;
+      background: #001529;
+      z-index: 999;
+    }
+  }
+  
+  /* Content wrapper */
+  .contentWrapper {
+    flex: 1 0 auto;  /* grow and shrink */
+    margin-top: 64px; /* offset for fixed header */
+    padding: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-sizing: border-box; /* safeguard */
+  }
+  
+  .footer {
+    flex-shrink: 0;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    background: #001529;
+    color: white;
+    font-size: 14px;
+    user-select: none;
+    padding: 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100vw;
+  }
+   

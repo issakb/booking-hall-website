@@ -1,11 +1,12 @@
 import React from 'react';
-import { Typography, Row, Col, Card, Button, Divider, List } from 'antd';
+import { Typography, Row, Col, Card, Divider, List, Grid } from 'antd';
 import DemoGallery from './DemoGallery';
 import DemoForm from './DemoForm';
 import DemoSidebar from './DemoSidebar';
 import styles from '../styles/DemoSection.module.css';
 
 const { Title, Paragraph, Text } = Typography;
+const { useBreakpoint } = Grid;
 
 type Testimonial = {
   client: string;
@@ -74,6 +75,9 @@ const FeaturesList: React.FC<{ features: string[] }> = ({ features }) => (
 );
 
 const DemoSection: React.FC = () => {
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
+
   return (
     <section className={styles.demoContainer} aria-labelledby="demo-section-title">
       <Title id="demo-section-title" level={2} className={styles.title}>
@@ -81,13 +85,35 @@ const DemoSection: React.FC = () => {
       </Title>
       <Paragraph className={styles.tagline}>{hallInfo.tagline}</Paragraph>
 
-      <Row gutter={[32, 32]}>
-        {/* Left Column: Info, Testimonials, Sidebar */}
-        <Col xs={24} md={12}>
-          <Card variant="borderless" className={styles.card} aria-label="Booking hall details">
-            <article>
+      {isMobile ? (
+        <>
+          <DemoGallery />
+          <Divider />
+          <Card className={styles.card}>
+            <Paragraph>{hallInfo.description}</Paragraph>
+            <Title level={4}>Key Details</Title>
+            <FeaturesList features={hallInfo.features} />
+            <p>
+              <Text strong>Capacity:</Text> {hallInfo.capacity} guests
+            </p>
+            <p>
+              <Text strong>Address:</Text> {hallInfo.address}
+            </p>
+            <Divider />
+            <Title level={4}>What Our Clients Say</Title>
+            <Testimonials testimonials={hallInfo.testimonials} />
+          </Card>
+          <Divider />
+          <DemoForm />
+          <Divider />
+          <DemoSidebar />
+        </>
+      ) : (
+        <Row gutter={[32, 32]}>
+          {/* Left Column */}
+          <Col md={12}>
+            <Card className={styles.card}>
               <Paragraph>{hallInfo.description}</Paragraph>
-
               <Title level={4}>Key Details</Title>
               <FeaturesList features={hallInfo.features} />
               <p>
@@ -96,26 +122,22 @@ const DemoSection: React.FC = () => {
               <p>
                 <Text strong>Address:</Text> {hallInfo.address}
               </p>
-
               <Divider />
-
               <Title level={4}>What Our Clients Say</Title>
               <Testimonials testimonials={hallInfo.testimonials} />
-
               <Divider />
+              <DemoSidebar />
+            </Card>
+          </Col>
 
-              <DemoSidebar /> {/* ✅ Moved here to fill vertical space */}
-            </article>
-          </Card>
-        </Col>
-
-        {/* Right Column: Gallery + Form */}
-        <Col xs={24} md={12}>
-          <DemoGallery />
-          <Divider />
-          <DemoForm />
-        </Col>
-      </Row>
+          {/* Right Column */}
+          <Col md={12}>
+            <DemoGallery />
+            <Divider />
+            <DemoForm />
+          </Col>
+        </Row>
+      )}
     </section>
   );
 };
